@@ -43,9 +43,9 @@ fclean: clean
 re: fclean all
 
 build_and_run: all
-	./$(OUTDIR)$(NAME)
+	./$(OUTDIR)/$(NAME)
 
 run:
-	./$(OUTDIR)$(NAME)
+	./$(OUTDIR)/$(NAME)
 
 .PHONY: all clean fclean re
