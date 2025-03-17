@@ -10,4 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
 
+int main(int ac, char **av)
+{
+  int i;
+  if (ac < 2)
+  {
+    std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+    return (0);
+  }
+  else
+  {
+
+  }
+  std::cout << "Hello, World!" << std::endl;
+  return (0);
+}

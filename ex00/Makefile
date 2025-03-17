@@ -11,3 +11,31 @@
 # **************************************************************************** #
 
 
+NAME = megaphone
+CXX = c++
+FLAGS = -Wall -Wextra -Werror -std=c++98
+
+### BEGIN AUTO GENERATED FILES ###
+# List of source files:
+SRC = \
+  megaphone.cpp
+### END AUTO GENERATED FILES ###
+OBJS = $(SRC:.cpp=.o)
+
+$(NAME): $(OBJS)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+clean:
+	rm -f $(OBJS)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
+
+all: $(NAME)
