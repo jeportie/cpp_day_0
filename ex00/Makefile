@@ -14,28 +14,38 @@
 NAME = megaphone
 CXX = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
+OUTDIR = bin
+OBJDIR = obj
 
 ### BEGIN AUTO GENERATED FILES ###
 # List of source files:
 SRC = \
   megaphone.cpp
 ### END AUTO GENERATED FILES ###
-OBJS = $(SRC:.cpp=.o)
+OBJS := $(patsubst %.cpp,$(OBJDIR)/%.o,$(SRC))
 
-$(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
-
-%.o: %.cpp
+$(OBJDIR)/%.o: %.cpp | $(OBJDIR)
+	@mkdir -p $(OBJDIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
+$(OUTDIR)/$(NAME): $(OBJS)
+	@mkdir -p $(OUTDIR)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(OUTDIR)/$(NAME)
+	
+all: $(NAME)
+
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJDIR)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(OUTDIR)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+build_and_run: all
+	./$(OUTDIR)$(NAME)
 
-all: $(NAME)
+run:
+	./$(OUTDIR)$(NAME)
+
+.PHONY: all clean fclean re
