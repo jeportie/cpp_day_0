@@ -1,0 +1,84 @@
+Start testing: Mar 18 16:45 UTC
+----------------------------------------------------------
+1/3 Testing: MegaphoneFunctions.StrToUpper
+1/3 Test: MegaphoneFunctions.StrToUpper
+Command: "/root/projects/cpp_day_0/ex00/build/test_megaphone" "--gtest_filter=MegaphoneFunctions.StrToUpper" "--gtest_also_run_disabled_tests"
+Directory: /root/projects/cpp_day_0/ex00/build
+"MegaphoneFunctions.StrToUpper" start time: Mar 18 16:45 UTC
+Output:
+----------------------------------------------------------
+Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = MegaphoneFunctions.StrToUpper
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MegaphoneFunctions
+[ RUN      ] MegaphoneFunctions.StrToUpper
+[       OK ] MegaphoneFunctions.StrToUpper (0 ms)
+[----------] 1 test from MegaphoneFunctions (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MegaphoneFunctions.StrToUpper" end time: Mar 18 16:45 UTC
+"MegaphoneFunctions.StrToUpper" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/3 Testing: MegaphoneFunctions.StrCheckSpace
+2/3 Test: MegaphoneFunctions.StrCheckSpace
+Command: "/root/projects/cpp_day_0/ex00/build/test_megaphone" "--gtest_filter=MegaphoneFunctions.StrCheckSpace" "--gtest_also_run_disabled_tests"
+Directory: /root/projects/cpp_day_0/ex00/build
+"MegaphoneFunctions.StrCheckSpace" start time: Mar 18 16:45 UTC
+Output:
+----------------------------------------------------------
+Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = MegaphoneFunctions.StrCheckSpace
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MegaphoneFunctions
+[ RUN      ] MegaphoneFunctions.StrCheckSpace
+[       OK ] MegaphoneFunctions.StrCheckSpace (0 ms)
+[----------] 1 test from MegaphoneFunctions (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MegaphoneFunctions.StrCheckSpace" end time: Mar 18 16:45 UTC
+"MegaphoneFunctions.StrCheckSpace" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/3 Testing: MegaphoneIntegration.StdOutput
+3/3 Test: MegaphoneIntegration.StdOutput
+Command: "/root/projects/cpp_day_0/ex00/build/test_megaphone" "--gtest_filter=MegaphoneIntegration.StdOutput" "--gtest_also_run_disabled_tests"
+Directory: /root/projects/cpp_day_0/ex00/build
+"MegaphoneIntegration.StdOutput" start time: Mar 18 16:45 UTC
+Output:
+----------------------------------------------------------
+Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = MegaphoneIntegration.StdOutput
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MegaphoneIntegration
+[ RUN      ] MegaphoneIntegration.StdOutput
+[       OK ] MegaphoneIntegration.StdOutput (3 ms)
+[----------] 1 test from MegaphoneIntegration (3 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (3 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MegaphoneIntegration.StdOutput" end time: Mar 18 16:45 UTC
+"MegaphoneIntegration.StdOutput" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Mar 18 16:45 UTC

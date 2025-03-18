@@ -12,17 +12,7 @@
 
 cmake_minimum_required(VERSION 3.10)
 
-# Check if project name is passed via -DNAME=...
-if(NOT DEFINED NAME OR "${NAME}" STREQUAL "")
-    message(STATUS "No project name given, prompting interactively...")
-    set(NAME "default_project" CACHE STRING "Project name")
-    set(prompt_message "Please enter your project name: ")
-    message(${prompt_message})
-    file(READ "/dev/stdin" NAME_INPUT LIMIT 255)
-    string(STRIP "${NAME_INPUT}" NAME)
-endif()
-
-project(${NAME} LANGUAGES CXX)
+project(megaphone LANGUAGES CXX)
 
 # Set C++ standard and compilation flags
 set(CMAKE_CXX_STANDARD 98)
@@ -57,22 +47,17 @@ add_custom_target(build_and_run
 )
 
 ### GOOGLE TEST INTEGRATION ###
-include(FetchContent)
-
-FetchContent_Declare(
-    googletest
-    GIT_REPOSITORY https://github.com/google/googletest.git
-    GIT_TAG release-1.14.0
-)
-
-FetchContent_MakeAvailable(googletest)
-
 enable_testing()
 
-# Test executable
-file(GLOB TEST_SOURCES "tests/*.cpp")
+# Find GTest
+find_package(GTest REQUIRED)
+include(GoogleTest)
 
-add_executable(test_megaphone ${TEST_SOURCES})
+# Test executable
+file(GLOB TEST_SOURCES "${CMAKE_SOURCE_DIR}/tests/*.cpp")
+
+# Add utils.cpp explicitly to fix linking
+add_executable(test_megaphone ${TEST_SOURCES} ${CMAKE_SOURCE_DIR}/src/utils.cpp)
 
 target_link_libraries(test_megaphone
     GTest::gtest_main
@@ -80,3 +65,5 @@ target_link_libraries(test_megaphone
 
 include(GoogleTest)
 gtest_discover_tests(test_megaphone)
+#add_dependencies(test_megaphone megaphone)
+

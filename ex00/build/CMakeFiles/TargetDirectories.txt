@@ -1,0 +1,7 @@
+/root/projects/cpp_day_0/ex00/build/CMakeFiles/megaphone.dir
+/root/projects/cpp_day_0/ex00/build/CMakeFiles/run.dir
+/root/projects/cpp_day_0/ex00/build/CMakeFiles/build_and_run.dir
+/root/projects/cpp_day_0/ex00/build/CMakeFiles/test_megaphone.dir
+/root/projects/cpp_day_0/ex00/build/CMakeFiles/test.dir
+/root/projects/cpp_day_0/ex00/build/CMakeFiles/edit_cache.dir
+/root/projects/cpp_day_0/ex00/build/CMakeFiles/rebuild_cache.dir

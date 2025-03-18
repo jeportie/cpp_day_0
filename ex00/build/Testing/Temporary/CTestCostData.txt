@@ -1,0 +1,4 @@
+MegaphoneFunctions.StrToUpper 2 0.000492183
+MegaphoneFunctions.StrCheckSpace 2 0.000474244
+MegaphoneIntegration.StdOutput 2 0.00235655
+---
