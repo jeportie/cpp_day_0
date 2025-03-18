@@ -16,9 +16,12 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 OUTDIR = bin
 OBJDIR = obj
 
-### BEGIN AUTO GENERATED FILES ###
+#### BEGIN AUTO GENERATED FILES ###
 # List of source files:
 SRC = \
+	  megaphone.cpp
+### END AUTO GENERATED FILES ##### BEGIN AUTO GENERATED FILES ###
+
 
 OBJS = $(patsubst %.cpp,$(OBJDIR)/%.o,$(SRC))
 

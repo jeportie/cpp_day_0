@@ -19,8 +19,9 @@ OBJDIR = obj
 ### BEGIN AUTO GENERATED FILES ###
 # List of source files:
 SRC = \
-  src/megaphone.cpp
+
 ### END AUTO GENERATED FILES ###
+
 
 OBJS = $(patsubst %.cpp,$(OBJDIR)/%.o,$(SRC))
 
