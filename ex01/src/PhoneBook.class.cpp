@@ -1,0 +1,102 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.class.cpp                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jeportie <jeportie@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/19 10:05:40 by jeportie          #+#    #+#             */
+/*   Updated: 2025/03/19 18:09:51 by jeportie         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <cstdlib>
+#include <iostream>
+#include <string>
+#include "PhoneBook.class.hpp"
+#include "Contact.class.hpp"
+
+PhoneBook::PhoneBook(void)
+{
+    std::cout << "PhoneBook constructor called!" << std::endl;
+    PhoneBook::_arrIndex = 0;
+    return;
+}
+
+PhoneBook::~PhoneBook(void)
+{
+    std::cout << "PhoneBook destructor called!" << std::endl;
+    return;
+}
+
+std::string PhoneBook::_getInput(const std::string& promptText)
+{
+    std::string input;
+
+    while (input.empty())
+    {
+        std::cout << promptText << std::endl;
+        std::getline(std::cin, input);
+        if (input.empty())
+            std::cout << "Error: Cannot be empty!" << std::endl;
+    }
+    return (input);
+}
+
+void PhoneBook::addContact()
+{
+    std::string firstName;
+    std::string lastName;
+    std::string nickname;
+    std::string phoneNbr;
+    std::string darkestSecret;
+    Contact     current;
+
+    firstName     = PhoneBook::_getInput("Please enter the new contact first name:");
+    lastName      = PhoneBook::_getInput("Please enter the new contact last name:");
+    nickname      = PhoneBook::_getInput("Please enter the new contact nickname:");
+    phoneNbr      = PhoneBook::_getInput("Please enter the new contact phone number:");
+    darkestSecret = PhoneBook::_getInput("Please enter the new contact darkest secret:");
+
+    current = PhoneBook::_contacts[_arrIndex % 8];
+    current.setContactInfo(firstName, lastName, nickname, phoneNbr, darkestSecret);
+    PhoneBook::_arrIndex++;
+	std::cout << "first name recorded : " << current.getFirstName() << std::endl;
+    return;
+}
+
+std::string PhoneBook::_formatString(std::string str)
+{
+	std::string	format;
+
+	(void)str;
+	return (format);
+}
+
+void PhoneBook::_printContact(std::string index, int i)
+{
+	Contact	current;
+
+	current = PhoneBook::_contacts[i];
+//	if (current.checkIfEmpty())
+//	{
+//		std::cout << "Error: index in the PhoneBook is empty" << std::endl;
+//		return;
+//	}
+	std::cout << "|  index:  |first name|last name| nickname |" << std::endl;
+	std::cout	<< "|" << index
+				<< "|" << current.getFirstName()
+				<< "|" << current.getLastName()
+				<< "|" << current.getNickname()
+				<< "|" << std::endl;
+}
+
+void PhoneBook::searchContact()
+{
+	std::string	index;
+    int         i;
+
+    index = PhoneBook::_getInput("Please enter a PhoneBook index");
+    i = std::atoi(index.c_str()) % 8;
+	PhoneBook::_printContact(index, i);
+}

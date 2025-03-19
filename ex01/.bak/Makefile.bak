@@ -10,37 +10,55 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = myPhoneBook
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 OUTDIR = bin
+SRCDIR = src
 OBJDIR = obj
+MAIN = main.c
 
 #### BEGIN AUTO GENERATED FILES ###
 # List of source files:
 SRC = \
-  utils.cpp 
+  src/PhoneBook.class.cpp 
 ### END AUTO GENERATED FILES ###
 
-OBJS = $(patsubst %.cpp,$(OBJDIR)/%.o,$(SRC))
+# Create object for main.c
+MAIN_OBJ = $(OBJDIR)/main.o
+
+# Pattern rule for src files (for .cpp files)
+OBJS = $(SRC:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o) $(MAIN_OBJ)
+
+# Dependency files (if needed)
+DEPS = $(OBJ:.o=.d)
 
 all: $(OUTDIR)/$(NAME)
 
+# Linking rule
 $(OUTDIR)/$(NAME): $(OBJS) | $(OUTDIR)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $@
 
-$(OBJDIR)/%.o: %.cpp | $(OBJDIR)
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+# Compile rule for .cpp files in src
+$(OBJDIR)/%.o: $(SRCDIR)/%.cpp
+	@mkdir -p $(dir $@)
+	$(CXX) $(CXXFLAGS) -MMD -c $< -o $@
 
-$(OBJDIR) $(OUTDIR):
-	mkdir -p $@
+# Compile rule for main.c
+$(OBJDIR)/main.o: main.c
+	@mkdir -p $(dir $@)
+	$(CXX) $(CXXFLAGS) -MMD -c $< -o $@
 
+# Directories creation
+$(OUTDIR):
+	mkdir -p $(OUTDIR)
+
+# Rules
 clean:
-	rm -f $(OBJS)
+	rm -rf $(OBJDIR)
 
 fclean: clean
-	rm -f $(OUTDIR)/$(NAME)
-	rm -rf $(OBJDIR) $(OUTDIR)
+	rm -rf $(OUTDIR)
 
 re: fclean all
 
