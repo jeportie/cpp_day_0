@@ -1,16 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.cpp                                :+:      :+:    :+:   */
+/*   PhoneBook.class.public.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeportie <jeportie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 10:05:40 by jeportie          #+#    #+#             */
-/*   Updated: 2025/03/19 18:09:51 by jeportie         ###   ########.fr       */
+/*   Updated: 2025/03/20 00:01:38 by jeportie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <cstdlib>
 #include <iostream>
 #include <string>
 #include "PhoneBook.class.hpp"
@@ -27,20 +26,6 @@ PhoneBook::~PhoneBook(void)
 {
     std::cout << "PhoneBook destructor called!" << std::endl;
     return;
-}
-
-std::string PhoneBook::_getInput(const std::string& promptText)
-{
-    std::string input;
-
-    while (input.empty())
-    {
-        std::cout << promptText << std::endl;
-        std::getline(std::cin, input);
-        if (input.empty())
-            std::cout << "Error: Cannot be empty!" << std::endl;
-    }
-    return (input);
 }
 
 void PhoneBook::addContact()
@@ -60,35 +45,10 @@ void PhoneBook::addContact()
 
     current = PhoneBook::_contacts[_arrIndex % 8];
     current.setContactInfo(firstName, lastName, nickname, phoneNbr, darkestSecret);
+	PhoneBook::_contacts[_arrIndex % 8] = current;	
     PhoneBook::_arrIndex++;
 	std::cout << "first name recorded : " << current.getFirstName() << std::endl;
     return;
-}
-
-std::string PhoneBook::_formatString(std::string str)
-{
-	std::string	format;
-
-	(void)str;
-	return (format);
-}
-
-void PhoneBook::_printContact(std::string index, int i)
-{
-	Contact	current;
-
-	current = PhoneBook::_contacts[i];
-//	if (current.checkIfEmpty())
-//	{
-//		std::cout << "Error: index in the PhoneBook is empty" << std::endl;
-//		return;
-//	}
-	std::cout << "|  index:  |first name|last name| nickname |" << std::endl;
-	std::cout	<< "|" << index
-				<< "|" << current.getFirstName()
-				<< "|" << current.getLastName()
-				<< "|" << current.getNickname()
-				<< "|" << std::endl;
 }
 
 void PhoneBook::searchContact()
