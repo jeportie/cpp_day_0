@@ -21,8 +21,9 @@ MAIN = main.cpp
 #### BEGIN AUTO GENERATED FILES ###
 # List of source files:
 SRC = \
-  src/PhoneBook.class.cpp \
-  src/Contact.class.cpp 
+  src/Contact.class.cpp \
+  src/PhoneBook.class.private.cpp \
+  src/PhoneBook.class.public.cpp 
 ### END AUTO GENERATED FILES ###
 
 # Create object for main.cpp

@@ -1,7 +1,0 @@
-add_test( MegaphoneFunctions.StrToUpper /root/projects/cpp_day_0/ex00/build/test_megaphone [==[--gtest_filter=MegaphoneFunctions.StrToUpper]==] --gtest_also_run_disabled_tests)
-set_tests_properties( MegaphoneFunctions.StrToUpper PROPERTIES WORKING_DIRECTORY /root/projects/cpp_day_0/ex00/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
-add_test( MegaphoneFunctions.StrCheckSpace /root/projects/cpp_day_0/ex00/build/test_megaphone [==[--gtest_filter=MegaphoneFunctions.StrCheckSpace]==] --gtest_also_run_disabled_tests)
-set_tests_properties( MegaphoneFunctions.StrCheckSpace PROPERTIES WORKING_DIRECTORY /root/projects/cpp_day_0/ex00/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
-add_test( MegaphoneIntegration.StdOutput /root/projects/cpp_day_0/ex00/build/test_megaphone [==[--gtest_filter=MegaphoneIntegration.StdOutput]==] --gtest_also_run_disabled_tests)
-set_tests_properties( MegaphoneIntegration.StdOutput PROPERTIES WORKING_DIRECTORY /root/projects/cpp_day_0/ex00/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
-set( test_megaphone_TESTS MegaphoneFunctions.StrToUpper MegaphoneFunctions.StrCheckSpace MegaphoneIntegration.StdOutput)
