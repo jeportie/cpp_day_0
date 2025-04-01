@@ -1,0 +1,27 @@
+[
+{
+  "directory": "/root/projects/cpp_day_0/ex00/bin/Debug",
+  "command": "/usr/bin/c++   -Wall -Wextra -Werror -g -std=gnu++98 -o CMakeFiles/megaphone.dir/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp.o -c /root/projects/cpp_day_0/ex00/bin/Debug/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp",
+  "file": "/root/projects/cpp_day_0/ex00/bin/Debug/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp"
+},
+{
+  "directory": "/root/projects/cpp_day_0/ex00/bin/Debug",
+  "command": "/usr/bin/c++   -Wall -Wextra -Werror -g -std=gnu++98 -o CMakeFiles/megaphone.dir/src/megaphone.cpp.o -c /root/projects/cpp_day_0/ex00/src/megaphone.cpp",
+  "file": "/root/projects/cpp_day_0/ex00/src/megaphone.cpp"
+},
+{
+  "directory": "/root/projects/cpp_day_0/ex00/bin/Debug",
+  "command": "/usr/bin/c++   -Wall -Wextra -Werror -g -std=gnu++98 -o CMakeFiles/megaphone.dir/src/utils.cpp.o -c /root/projects/cpp_day_0/ex00/src/utils.cpp",
+  "file": "/root/projects/cpp_day_0/ex00/src/utils.cpp"
+},
+{
+  "directory": "/root/projects/cpp_day_0/ex00/bin/Debug",
+  "command": "/usr/bin/c++   -Wall -Wextra -Werror -g -DGTEST_HAS_PTHREAD=1 -std=gnu++11 -o CMakeFiles/test_megaphone.dir/tests/test_megaphone.cpp.o -c /root/projects/cpp_day_0/ex00/tests/test_megaphone.cpp",
+  "file": "/root/projects/cpp_day_0/ex00/tests/test_megaphone.cpp"
+},
+{
+  "directory": "/root/projects/cpp_day_0/ex00/bin/Debug",
+  "command": "/usr/bin/c++   -Wall -Wextra -Werror -g -DGTEST_HAS_PTHREAD=1 -std=gnu++11 -o CMakeFiles/test_megaphone.dir/src/utils.cpp.o -c /root/projects/cpp_day_0/ex00/src/utils.cpp",
+  "file": "/root/projects/cpp_day_0/ex00/src/utils.cpp"
+}
+]
