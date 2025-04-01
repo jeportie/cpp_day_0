@@ -6,7 +6,7 @@
 /*   By: jeportie <jeportie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 13:45:48 by jeportie          #+#    #+#             */
-/*   Updated: 2025/03/31 14:12:42 by jeportie         ###   ########.fr       */
+/*   Updated: 2025/03/31 19:07:44 by jeportie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ static int _totalNbWithdrawals = 0;
 Account::Account(int initial_deposit)
 {
 	std::cout << "Account constructor called" << std::endl;
+	Account::_displayTimestamp();
+	std::cout << "" << std::endl;
 	Account::makeDeposit(initial_deposit);
 }
 
