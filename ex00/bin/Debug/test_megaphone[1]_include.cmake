@@ -1,5 +1,0 @@
-if(EXISTS "/root/projects/cpp_day_0/ex00/bin/Debug/test_megaphone[1]_tests.cmake")
-  include("/root/projects/cpp_day_0/ex00/bin/Debug/test_megaphone[1]_tests.cmake")
-else()
-  add_test(test_megaphone_NOT_BUILT test_megaphone_NOT_BUILT)
-endif()

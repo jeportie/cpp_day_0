@@ -1,1 +1,0 @@
-/usr/bin/c++ -Wall -Wextra -Werror -g CMakeFiles/megaphone.dir/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp.o CMakeFiles/megaphone.dir/src/megaphone.cpp.o CMakeFiles/megaphone.dir/src/utils.cpp.o -o bin/megaphone 
