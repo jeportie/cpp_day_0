@@ -65,3 +65,8 @@ void PhoneBook::searchContact()
     i     = std::atoi(index.c_str()) % 8;
     PhoneBook::_printContact(index, i);
 }
+
+const Contact& PhoneBook::getContact(int index) const
+{
+    return _contacts[index % 8];
+}

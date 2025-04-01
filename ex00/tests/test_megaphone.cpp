@@ -6,7 +6,7 @@
 /*   By: jeportie <jeportie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 11:00:33 by jeportie          #+#    #+#             */
-/*   Updated: 2025/03/18 11:03:04 by jeportie         ###   ########.fr       */
+/*   Updated: 2025/04/01 15:52:12 by jeportie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include <string>
 #include <cstdlib>
 #include <cstdio>
-#include <iostream>
 
 // Functions you defined (declare prototypes for testing)
 std::string strToupper(std::string& str);

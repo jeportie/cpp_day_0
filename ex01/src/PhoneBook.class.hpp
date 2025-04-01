@@ -21,8 +21,9 @@ public:
     PhoneBook(void);
     ~PhoneBook(void);
 
-	void		addContact();
-	void		searchContact();
+	void			addContact();
+	void			searchContact();
+	const Contact&	getContact(int index) const;
 
 private:
 	int			_arrIndex;
