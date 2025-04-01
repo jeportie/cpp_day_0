@@ -16,16 +16,16 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 OUTDIR = bin
 SRCDIR = src
 OBJDIR = obj
-MAIN = tests.cpp
+MAIN = main.cpp
 
 #### BEGIN AUTO GENERATED FILES ###
 # List of source files:
 SRC = \
-  src/Account.cpp 
+
 ### END AUTO GENERATED FILES ###
 
 # Create object for main.cpp
-MAIN_OBJ = $(OBJDIR)/tests.o
+MAIN_OBJ = $(OBJDIR)/main.o
 
 # Pattern rule for src files (for .cpp files)
 OBJS = $(SRC:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o) $(MAIN_OBJ)
@@ -45,7 +45,7 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.cpp
 	$(CXX) $(CXXFLAGS) -MMD -c $< -o $@
 
 # Compile rule for main.cpp
-$(OBJDIR)/tests.o: tests.cpp
+$(OBJDIR)/main.o: main.cpp
 	@mkdir -p $(dir $@)
 	$(CXX) $(CXXFLAGS) -MMD -c $< -o $@
 
