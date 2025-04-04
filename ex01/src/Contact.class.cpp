@@ -36,7 +36,7 @@ bool Contact::setContactInfo(const std::string& firstName,
     if (firstName.empty() || lastName.empty() || nickname.empty()
 		|| phoneNbr.empty() || darkestSecret.empty())
         return (false);
-    Contact::_fistName      = firstName;
+    Contact::_firstName      = firstName;
     Contact::_lastName      = lastName;
     Contact::_nickname      = nickname;
     Contact::_phoneNbr      = phoneNbr;
@@ -46,7 +46,7 @@ bool Contact::setContactInfo(const std::string& firstName,
 
 std::string Contact::getFirstName() const
 {
-	return (Contact::_fistName);
+	return (Contact::_firstName);
 }
 
 std::string Contact::getLastName() const
@@ -71,7 +71,7 @@ std::string Contact::getDarkestSecret() const
 
 bool Contact::checkIfEmpty() const
 {
-	if (Contact::_fistName.empty())
+	if (Contact::_firstName.empty())
 		return (true);
 	else
 		return (false);

@@ -44,13 +44,14 @@ void PhoneBook::addContact()
     phoneNbr      = PhoneBook::_getInput("Please enter the new contact phone number:");
     darkestSecret = PhoneBook::_getInput("Please enter the new contact darkest secret:");
 
-    current = PhoneBook::_contacts[_arrIndex % 8];
-    if (!current.setContactInfo(firstName, lastName, nickname, phoneNbr, darkestSecret))
+    /*current = PhoneBook::_contacts[_arrIndex % 8];*/
+    if (!PhoneBook::_contacts[_arrIndex % 8].setContactInfo(firstName,
+		lastName, nickname, phoneNbr, darkestSecret))
     {
         std::cout << "error: setContactInfo failed" << std::endl;
         return;
     }
-    PhoneBook::_contacts[_arrIndex % 8] = current;
+    /*PhoneBook::_contacts[_arrIndex % 8] = current;*/
     PhoneBook::_arrIndex++;
     std::cout << "first name recorded : " << current.getFirstName() << std::endl;
     return;

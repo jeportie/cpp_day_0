@@ -35,7 +35,7 @@ public:
 	bool		checkIfEmpty() const;
 
 private:
-	std::string	_fistName;
+	std::string	_firstName;
 	std::string	_lastName;
 	std::string	_nickname;
 	std::string _phoneNbr;
