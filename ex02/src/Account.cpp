@@ -100,7 +100,7 @@ bool Account::makeWithdrawal(int withdrawal)
 
 	p_amount = Account::checkAmount();
 	Account::_displayTimestamp();
-	if (Account::_amount < 0)
+	if (Account::_amount < withdrawal)
 	{
 		std::cout	<< " index:" << Account::_accountIndex
 					<< ";p_amount:" << p_amount
