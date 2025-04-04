@@ -1,1 +1,0 @@
-Error (gemini:gemini-2.0-flash-thinking-exp): Provider not available: gemini

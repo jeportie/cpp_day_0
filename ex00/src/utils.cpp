@@ -43,29 +43,3 @@ std::string strCheckSpace(std::string str)  // Passing by value
     }
     return (strRes);
 }
-
-/* Simplified function using standard library algo or clearer implementation*/
-std::string strCheckSpace2(std::string str)
-{
-    std::string result;
-    bool previousWasSpace = false;
-    
-    for (char c : str) {
-        if (c == ' ') {
-            if (!previousWasSpace) {
-                result += c;
-            }
-            previousWasSpace = true;
-        } else {
-            result += c;
-            previousWasSpace = false;
-        }
-    }
-    
-    // Remove trailing space if present
-    if (!result.empty() && result.back() == ' ') {
-        result.pop_back();
-    }
-    
-    return result;
-}
