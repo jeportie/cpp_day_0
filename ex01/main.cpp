@@ -23,9 +23,9 @@ int main(void)
 
     std::cout << RED << "Welcome To My Awsome PhoneBook!" << RESET << std::endl;
 	std::cout << std::endl << GREEN << "Loading\t..." << RESET << std::endl;
-	std::cout << GREEN << "..." << std::endl;
-	std::cout << "..." << std::endl;
-	std::cout << "..." << RESET << std::endl;
+	std::cout	<< std::endl << BOLDBLUE << "Commands:\nADD: Add a new contact" << std::endl
+				<< "SEARCH: Search in phone book\nEXIT: Exit and erase phone book"
+				<< RESET << std::endl;
 	std::cout << "===============================================" << std::endl;
 	while (1)
 	{

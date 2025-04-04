@@ -18,14 +18,16 @@
 
 PhoneBook::PhoneBook(void)
 {
-    std::cout << "PhoneBook constructor called!" << std::endl;
+	if (CLASS_LOG)
+		std::cout << "PhoneBook constructor called!" << std::endl;
     PhoneBook::_arrIndex = 0;
     return;
 }
 
 PhoneBook::~PhoneBook(void)
 {
-    std::cout << "PhoneBook destructor called!" << std::endl;
+	if (CLASS_LOG)
+		std::cout << "PhoneBook destructor called!" << std::endl;
     return;
 }
 

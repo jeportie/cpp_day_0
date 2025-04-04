@@ -13,6 +13,8 @@
 #ifndef CONTACT_CLASS_HPP
 # define CONTACT_CLASS_HPP
 
+# define CLASS_LOG 0
+
 #include <string>
 class Contact
 {

@@ -16,14 +16,16 @@
 
 Contact::Contact(void)
 {
-    std::cout << "Contact constructor called !" << std::endl;
+	if (CLASS_LOG)
+		std::cout << "Contact constructor called !" << std::endl;
     return;
 
 }
 
 Contact::~Contact(void)
 {
-    std::cout << "Contact destructor called !" << std::endl;
+	if (CLASS_LOG)
+		std::cout << "Contact destructor called !" << std::endl;
     return;
 }
 
