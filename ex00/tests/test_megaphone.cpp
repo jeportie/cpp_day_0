@@ -38,6 +38,19 @@ TEST(MegaphoneFunctions, StrToUpper)
 {
     std::string input = "Hello 42!";
     EXPECT_EQ(strToupper(input), "HELLO 42!");
+
+// Additional test cases
+    std::string empty = "";
+    EXPECT_EQ(strToupper(empty), "");
+    
+    std::string already_upper = "ALREADY UPPERCASE";
+    EXPECT_EQ(strToupper(already_upper), "ALREADY UPPERCASE");
+    
+    std::string special_chars = "1234!@#$";
+    EXPECT_EQ(strToupper(special_chars), "1234!@#$");
+    
+    std::string lowercase = "lowercase";
+    EXPECT_EQ(strToupper(lowercase), "LOWERCASE");
 }
 
 // Test strCheckSpace
@@ -45,6 +58,12 @@ TEST(MegaphoneFunctions, StrCheckSpace)
 {
     std::string input = "Hello     42!  Test   spaces!";
     EXPECT_EQ(strCheckSpace(input), "Hello 42! Test spaces!");
+
+// Additional test cases
+    EXPECT_EQ(strCheckSpace(std::string("")), "");
+    EXPECT_EQ(strCheckSpace(std::string("NoExtraSpaces")), "NoExtraSpaces");
+    EXPECT_EQ(strCheckSpace(std::string("  Leading and trailing spaces  ")), " Leading and trailing spaces ");
+    EXPECT_EQ(strCheckSpace(std::string("     ")), " ");
 }
 
 // Test stdout behavior of the executable
