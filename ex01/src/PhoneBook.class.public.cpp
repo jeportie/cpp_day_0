@@ -17,17 +17,17 @@
 #include "Contact.class.hpp"
 
 PhoneBook::PhoneBook(void)
+: _arrIndex(0)
 {
-	if (CLASS_LOG)
-		std::cout << "PhoneBook constructor called!" << std::endl;
-    PhoneBook::_arrIndex = 0;
+    if (CLASS_LOG)
+        std::cout << "PhoneBook constructor called!" << std::endl;
     return;
 }
 
 PhoneBook::~PhoneBook(void)
 {
-	if (CLASS_LOG)
-		std::cout << "PhoneBook destructor called!" << std::endl;
+    if (CLASS_LOG)
+        std::cout << "PhoneBook destructor called!" << std::endl;
     return;
 }
 
@@ -38,24 +38,21 @@ void PhoneBook::addContact()
     std::string nickname;
     std::string phoneNbr;
     std::string darkestSecret;
-    Contact     current;
 
-    firstName     = PhoneBook::_getInput("Please enter the new contact first name:");
-    lastName      = PhoneBook::_getInput("Please enter the new contact last name:");
-    nickname      = PhoneBook::_getInput("Please enter the new contact nickname:");
-    phoneNbr      = PhoneBook::_getInput("Please enter the new contact phone number:");
-    darkestSecret = PhoneBook::_getInput("Please enter the new contact darkest secret:");
+    firstName     = this->_getInput("Please enter the new contact first name:");
+    lastName      = this->_getInput("Please enter the new contact last name:");
+    nickname      = this->_getInput("Please enter the new contact nickname:");
+    phoneNbr      = this->_getInput("Please enter the new contact phone number:");
+    darkestSecret = this->_getInput("Please enter the new contact darkest secret:");
 
-    /*current = PhoneBook::_contacts[_arrIndex % 8];*/
-    if (!PhoneBook::_contacts[_arrIndex % 8].setContactInfo(firstName,
-		lastName, nickname, phoneNbr, darkestSecret))
+    if (!this->_contacts[_arrIndex % 8].setContactInfo(
+            firstName, lastName, nickname, phoneNbr, darkestSecret))
     {
         std::cout << "error: setContactInfo failed" << std::endl;
         return;
     }
-    /*PhoneBook::_contacts[_arrIndex % 8] = current;*/
-    PhoneBook::_arrIndex++;
-    std::cout << "first name recorded : " << current.getFirstName() << std::endl;
+    this->_arrIndex++;
+    std::cout << "name recorded : " << _contacts[_arrIndex % 8].getFirstName() << std::endl;
     return;
 }
 
@@ -64,12 +61,9 @@ void PhoneBook::searchContact()
     std::string index;
     int         i;
 
-    index = PhoneBook::_getInput("Please enter a PhoneBook index");
+    index = this->_getInput("Please enter a PhoneBook index");
     i     = std::atoi(index.c_str()) % 8;
-    PhoneBook::_printContact(index, i);
+    this->_printContact(index, i);
 }
 
-const Contact& PhoneBook::getContact(int index) const
-{
-    return _contacts[index % 8];
-}
+const Contact& PhoneBook::getContact(int index) const { return (_contacts[index % 8]); }

@@ -16,16 +16,15 @@
 
 Contact::Contact(void)
 {
-	if (CLASS_LOG)
-		std::cout << "Contact constructor called !" << std::endl;
+    if (CLASS_LOG)
+        std::cout << "Contact constructor called !" << std::endl;
     return;
-
 }
 
 Contact::~Contact(void)
 {
-	if (CLASS_LOG)
-		std::cout << "Contact destructor called !" << std::endl;
+    if (CLASS_LOG)
+        std::cout << "Contact destructor called !" << std::endl;
     return;
 }
 
@@ -35,46 +34,31 @@ bool Contact::setContactInfo(const std::string& firstName,
                              const std::string& phoneNbr,
                              const std::string& darkestSecret)
 {
-    if (firstName.empty() || lastName.empty() || nickname.empty()
-		|| phoneNbr.empty() || darkestSecret.empty())
+    if (firstName.empty() || lastName.empty() || nickname.empty() || phoneNbr.empty()
+        || darkestSecret.empty())
         return (false);
-    Contact::_firstName      = firstName;
-    Contact::_lastName      = lastName;
-    Contact::_nickname      = nickname;
-    Contact::_phoneNbr      = phoneNbr;
-    Contact::_darkestSecret = darkestSecret;
+    this->_firstName     = firstName;
+    this->_lastName      = lastName;
+    this->_nickname      = nickname;
+    this->_phoneNbr      = phoneNbr;
+    this->_darkestSecret = darkestSecret;
     return (true);
 }
 
-std::string Contact::getFirstName() const
-{
-	return (Contact::_firstName);
-}
+std::string Contact::getFirstName() const { return (this->_firstName); }
 
-std::string Contact::getLastName() const
-{
-	return (Contact::_lastName);
-}
+std::string Contact::getLastName() const { return (this->_lastName); }
 
-std::string Contact::getNickname() const
-{
-	return (Contact::_nickname);
-}
+std::string Contact::getNickname() const { return (this->_nickname); }
 
-std::string Contact::getPhoneNbr() const
-{
-	return (Contact::_phoneNbr);
-}
+std::string Contact::getPhoneNbr() const { return (this->_phoneNbr); }
 
-std::string Contact::getDarkestSecret() const
-{
-	return (Contact::_darkestSecret);
-}
+std::string Contact::getDarkestSecret() const { return (this->_darkestSecret); }
 
 bool Contact::checkIfEmpty() const
 {
-	if (Contact::_firstName.empty())
-		return (true);
-	else
-		return (false);
+    if (this->_firstName.empty())
+        return (true);
+    else
+        return (false);
 }
