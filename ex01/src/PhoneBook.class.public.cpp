@@ -51,8 +51,8 @@ void PhoneBook::addContact()
         std::cout << "error: setContactInfo failed" << std::endl;
         return;
     }
-    this->_arrIndex++;
     std::cout << "name recorded : " << _contacts[_arrIndex % 8].getFirstName() << std::endl;
+    this->_arrIndex++;
     return;
 }
 
