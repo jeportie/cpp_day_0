@@ -15,7 +15,6 @@
 #include <cstdlib>
 #include <cstdio>
 
-// Functions you defined (declare prototypes for testing)
 std::string strToupper(std::string& str);
 std::string strCheckSpace(std::string str);
 
@@ -38,17 +37,12 @@ TEST(MegaphoneFunctions, StrToUpper)
 {
     std::string input = "Hello 42!";
     EXPECT_EQ(strToupper(input), "HELLO 42!");
-
-// Additional test cases
     std::string empty = "";
     EXPECT_EQ(strToupper(empty), "");
-    
     std::string already_upper = "ALREADY UPPERCASE";
     EXPECT_EQ(strToupper(already_upper), "ALREADY UPPERCASE");
-    
     std::string special_chars = "1234!@#$";
     EXPECT_EQ(strToupper(special_chars), "1234!@#$");
-    
     std::string lowercase = "lowercase";
     EXPECT_EQ(strToupper(lowercase), "LOWERCASE");
 }
@@ -58,8 +52,6 @@ TEST(MegaphoneFunctions, StrCheckSpace)
 {
     std::string input = "Hello     42!  Test   spaces!";
     EXPECT_EQ(strCheckSpace(input), "Hello 42! Test spaces!");
-
-// Additional test cases
     EXPECT_EQ(strCheckSpace(std::string("")), "");
     EXPECT_EQ(strCheckSpace(std::string("NoExtraSpaces")), "NoExtraSpaces");
     EXPECT_EQ(strCheckSpace(std::string("  Leading and trailing spaces  ")), " Leading and trailing spaces ");
@@ -71,17 +63,12 @@ TEST(MegaphoneIntegration, StdOutput)
 {
     std::string result;
 
-    // Use "bin/megaphone" instead of "../bin/megaphone"
     result = exec("bin/megaphone \"shhhhh... I think the students are asleep...\"");
     EXPECT_EQ(result, "SHHHHH... I THINK THE STUDENTS ARE ASLEEP...\n");
-
     result = exec("bin/megaphone Damnit \" ! \" \"Sorry students, I thought this thing was off.\"");
     EXPECT_EQ(result, "DAMNIT ! SORRY STUDENTS, I THOUGHT THIS THING WAS OFF.\n");
-
     result = exec("bin/megaphone");
     EXPECT_EQ(result, "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n");
-
-    // Complex space handling test
     result = exec("bin/megaphone \"Hello      world      42     students!\"");
     EXPECT_EQ(result, "HELLO WORLD 42 STUDENTS!\n");
 }
